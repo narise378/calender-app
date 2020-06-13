@@ -1,12 +1,11 @@
 import React from "react";
 import { GridList, Typography } from "@material-ui/core";
 import CalendarElement from "../CalendarElements"
-import { createCalendar } from "../../services/calendar"
 import * as styles from "./style.css";
 
 const days = ["日", "月", "火", "水", "木", "金", "土"];
 
-const CalendarBoard = () => {
+const CalendarBoard = ({ calendar }) => {
     console.log(calendar);
     return (
         <div className={styles.container}>
@@ -34,7 +33,5 @@ const CalendarBoard = () => {
         </div>
     );
 };
-
-const calendar = createCalendar();
 
 export default CalendarBoard;
