@@ -28,8 +28,4 @@ const mergeProps = (stateProps, dispatchProps) => ({
     }
 });
 
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps,
-    mergeProps
-)(Navigation);
+export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(Navigation);

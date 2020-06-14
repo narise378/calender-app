@@ -16,16 +16,6 @@ export const getMonth = ({ year, month }) => {
     return dayjs(`${year}-${month}`);
 }
 
-// export const getNextMonth = month => {
-//     const day = getMonth(month).add(1, "month");
-//     return formatMonth(day);
-// }
-
-// export const getPreviousMonth = month => {
-//     const day = getMonth(month).add(-1, "month");
-//     return formatMonth(day);
-// }
-
 const getMonthStateCreator = diff => month => {
     const day = getMonth(month).add(diff, "month");
     return formatMonth(day);
@@ -39,12 +29,12 @@ export const formatMonth = day => ({
     year: day.year()
 })
 
-export const isSomeDay = (d1, d2) => {
+export const isSameDay = (d1, d2) => {
     const format = "YYYYMMDD";
     return d1.format(format) === d2.format(format)
 }
 
-export const isSomeMonth = (m1, m2) => {
+export const isSameMonth = (m1, m2) => {
     const format = "YYYYMM";
     return m1.format(format) === m2.format(format);
 }
