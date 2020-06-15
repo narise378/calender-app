@@ -16,7 +16,7 @@ const AddScheduleDialog = ({
         form: { title, location, description, date },
         isDialogOpen
     },
-    closeDialog, setSchedule }) => {
+    closeDialog, setSchedule, saveSchedule }) => {
     return (
         <Dialog open={isDialogOpen} onClose={closeDialog} maxWidth="xs" fullWidth>
             <DialogActions>
@@ -31,7 +31,7 @@ const AddScheduleDialog = ({
                  autoFocus
                  fullWidth
                  placeholder="タイトルと日時を追加"
-                 value={title}
+                 value={title || ""}
                  onChange={e => setSchedule({ title: e.target.value })}
                 />
                 <Grid container spacing={1} alignItems="center" justify="space-between">
@@ -40,7 +40,7 @@ const AddScheduleDialog = ({
                     </Grid>
                     <Grid item xs={10}>
                         <DatePicker
-                         value={date}
+                         value={date || ""}
                          onChange={d => setSchedule({ date: d })}
                          variant="inline"
                          format="YYYY年M月D日"
@@ -57,11 +57,11 @@ const AddScheduleDialog = ({
                     </Grid>
                     <Grid item xs={10}>
                         <TextField
-                         style={spacer}
                          fullWidth
                          placeholder="場所を追加"
-                         value={location}
+                         value={location || ""}
                          onChange={e => setSchedule({ location: e.target.value })}
+                         style={spacer}
                         />
                     </Grid>
                 </Grid>
@@ -71,17 +71,17 @@ const AddScheduleDialog = ({
                     </Grid>
                     <Grid item xs={10}>
                         <TextField
-                         style={spacer}
                          fullWidth
                          placeholder="説明を追加"
-                         value={description}
+                         value={description || ""}
                          onChange={e => setSchedule({ description: e.target.value })}
+                         style={spacer}
                         />
                     </Grid>
                 </Grid>
             </DialogContent>
             <DialogActions>
-                <Button color="primary" variant="outlined">
+                <Button color="primary" variant="outlined" onClick={saveSchedule}>
                     保存
                 </Button>
             </DialogActions>
