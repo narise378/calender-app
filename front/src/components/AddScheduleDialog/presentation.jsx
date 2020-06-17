@@ -23,7 +23,7 @@ const AddScheduleDialog = ({
         <Dialog open={isDialogOpen} onClose={closeDialog} maxWidth="xs" fullWidth>
             <DialogActions>
                 <div className={styles.closeButton}>
-                    <Tooltip title="閉" placement="bottom">
+                    <Tooltip title="閉じる" placement="bottom">
                         <IconButton onClick={closeDialog} size="small">
                             <Close />
                         </IconButton>
@@ -34,7 +34,7 @@ const AddScheduleDialog = ({
                 <Title
                  autoFocus
                  fullWidth
-                 placeholder="タイトルと日時を追加"
+                 placeholder="タイトル、日時を追加する"
                  value={title || ""}
                  onChange={e => setSchedule({ title: e.target.value })}
                  onBlur={setIsEditStart}
