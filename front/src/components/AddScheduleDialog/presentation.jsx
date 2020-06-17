@@ -23,7 +23,7 @@ const AddScheduleDialog = ({
         <Dialog open={isDialogOpen} onClose={closeDialog} maxWidth="xs" fullWidth>
             <DialogActions>
                 <div className={styles.closeButton}>
-                    <Tooltip title="閉じる" placement="bottom">
+                    <Tooltip title="閉" placement="bottom">
                         <IconButton onClick={closeDialog} size="small">
                             <Close />
                         </IconButton>
