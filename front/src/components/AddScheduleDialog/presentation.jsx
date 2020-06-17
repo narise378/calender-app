@@ -1,5 +1,5 @@
 import React from "react";
-import { Dialog, DialogContent, TextField, DialogActions, Button, Input, Grid, IconButton, Typography } from "@material-ui/core"
+import { Dialog, DialogContent, TextField, DialogActions, Button, Input, Grid, IconButton, Typography, Tooltip } from "@material-ui/core"
 import { LocationOnOutlined, NotesOutlined, AccessTime, Close } from "@material-ui/icons";
 import { withStyles } from "@material-ui/styles";
 import { DatePicker } from "@material-ui/pickers"
@@ -23,9 +23,11 @@ const AddScheduleDialog = ({
         <Dialog open={isDialogOpen} onClose={closeDialog} maxWidth="xs" fullWidth>
             <DialogActions>
                 <div className={styles.closeButton}>
-                    <IconButton onClick={closeDialog} size="small">
-                        <Close />
-                    </IconButton>
+                    <Tooltip title="閉じる" placement="bottom">
+                        <IconButton onClick={closeDialog} size="small">
+                            <Close />
+                        </IconButton>
+                    </Tooltip>
                 </div>
             </DialogActions>
             <DialogContent>
