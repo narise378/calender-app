@@ -15,7 +15,7 @@ export const asyncSchedulesAddItem = schedule => async dispatch => {
     dispatch(schedulesSetLoading())
 
     const body = { ...schedule, date: schedule.date.toISOString() }
-    const result = await post("schedule", body)
+    const result = await post("schedules", body)
 
     const newSchedule = formatSchedule(result)
     dispatch(schedulesAddItem(newSchedule))

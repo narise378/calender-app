@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { GridList, Typography } from "@material-ui/core";
 import CalendarElement from "../CalendarElement"
 import * as styles from "./style.css";
-import { useEffect } from "react";
 
 const days = ["日", "月", "火", "水", "木", "金", "土"];
 
